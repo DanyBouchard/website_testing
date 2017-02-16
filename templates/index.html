@@ -11,12 +11,12 @@
 				<img src="/static/images/logo.png" alt="Dany Bouchard" style="width: 120px;height: 40px;"">
 			</a>
 		</div>
-		<h1>Select a destination</h1>
-		<p>
-			<a href={{ url_for('test') }}>Test</a>
-		</p>
-		{% block body %}
-		Index
-		{% endblock %}
+		<div id="content">
+			<h1>{% block title %}You are currently at /{% blockend %}</h1>
+			<p>
+			"This website is currently used as a testing playground."
+			<strong> By the way you are gay :)</strong>
+			</p>
+		</div>
 	</div>
 </body>
