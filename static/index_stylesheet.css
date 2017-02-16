@@ -16,4 +16,6 @@ body {
 .division {
 	margin: 10px;
 	width: 50%;
+	float: left;
+	display: inline-block;
 }
