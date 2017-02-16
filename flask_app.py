@@ -1,8 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def route():
-	return 'This is indeed the route.'
+	return render_template('index.html')
+
+@app.route('/test')
+def test():
+	return render_template('test.html')
