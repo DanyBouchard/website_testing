@@ -1,12 +1,47 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, url_for
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 
+# Flask-SQLAlchemy options, as per cs50
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///info.db'
+app.config['SQLALCHEMY_ECHO'] = True
+db = SQLAlchemy(app)
+
+# define a Message
+class Message(db.Model):
+	__tablename__ = 'messages'
+	id = db.Column(db.Integer, primary_key=True)
+	first_name = db.Column(db.Text)
+	last_name = db.Column(db.Text)
+	gender = db.Column(db.Text)
+	message = db.Column(db.Text)
+	
+	def __init__(self, first_name, last_name, gender, message):
+		self.first_name = first_name
+		self.last_name = last_name
+		self.gender = gender
+		self.message = message
+
+
+# offer to submit a message
 @app.route('/')
 def route():
-	return render_template('index.html')
+	return render_template('submit.html')
 
-@app.route('/test')
-def test():
-	return render_template('test.html')
+@app.route('/submit', methods=["POST"])
+def submit():
+	if (request.form["first_name"] == "" or request.form["last_name"] == "" or 
+	request.form["message"] == "" or len(request.form["message"]) > 55):
+		return render_template('failure.html')
+	message = Message(request.form["first_name"], request.form["last_name"], request.form["gender"], request.form["message"])
+	db.session.add(message)
+	db.session.commit()
+	return render_template("succes.html")
+	
+@app.route('/board')
+def board():
+	rows = Message.query.all()
+	return render_template("board.html", messages=rows)
