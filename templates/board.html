@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Board
+{% endblock %}
+
+{% block content %}
+<table>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Gender</th>
+		<th>Message</th>
+	</tr>
+	{% for member in messages %}
+	<tr>
+		<td>{{ member.first_name }}</td>
+		<td>{{ member.last_name }}</td>
+		<td>{{ member.gender }}</td>
+		<td>{{ member.message }}</td>
+	</tr>
+	{% endfor %}
+</table>	
+{% endblock %}

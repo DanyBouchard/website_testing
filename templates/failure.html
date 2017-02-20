@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Failure
+{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('route') }}" title="Home">
+	A problem occured during the submission of your form, please try again
+</a>
+{% endblock %}

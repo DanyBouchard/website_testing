@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Playground</title>
+	<link rel="stylesheet" type="text/css" href="/static/index_stylesheet.css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<a href={{ url_for('route') }} title="Home">
+				<img src="/static/images/logo.png" alt="Dany Bouchard" style="width: 120px;height: 40px;">
+			</a>
+		</div>
+		<div id="content">
+			<h1>{% block title %} {% endblock %}</h1>
+			<p>
+			{% block content %} {% endblock %}
+			</p>
+			<b/>
+			<a href="{{ url_for('route') }}" title="Home">Submit</a>
+			<a href="{{ url_for('board') }}" title="Board">Board<a/>
+		</div>
+	</div>
+</body>
