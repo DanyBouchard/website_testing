@@ -7,15 +7,18 @@ body {
 	color: #111;
 	text-align: left;
 	margin: 10px auto;
-	padding: 15px auto;
+	padding: 15px;
 	max-width: 800px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 	background-color: #fff;
 }
 
-.division {
-	margin: 10px;
-	width: 50%;
+#wrapper {
+	width: 1050px;
+	margin: 0 auto;
+}
+
+#right, #left {
+	border: 1px solid white;
 	float: left;
-	display: inline-block;
 }

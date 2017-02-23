@@ -8,7 +8,7 @@
 	<div id="container">
 		<div id="header">
 			<a href={{ url_for('route') }} title="Home">
-				<img src="/static/images/logo.png" alt="Dany Bouchard" style="width: 120px;height: 40px;"">
+				<img src="/static/images/logo.png" alt="Dany Bouchard" style="width: 120px;height: 40px;">
 			</a>
 		</div>
 		<div id="content">
@@ -16,23 +16,25 @@
 			<p>
 			This website is currently used as a testing playground.
 			</p>
-			<div class="division">
-				<strong>First list</strong>
-				<ul>
-					<li>One</li>
-					<li>Two</li>
-					<li>Three</li>
-				</ul>
+			<div id="wrapper">
+				<div id="left">
+					<h4>First list</h4>
+					<ul>
+						<li>One</li>
+						<li>Two</li>
+						<li>Three</li>
+					</ul>
+				</div>
+				<div id="right">
+					<h4>Second list</h4>
+					<ul>
+						<li>Four</li>
+						<li>Five</li>
+						<li>Six</li>
+					</ul>
+				</div>
 			</div>
-			<div class="division">
-
-				<ul>
-					<strong>Second list</strong>
-					<li>Four</li>
-					<li>Five</li>
-					<li>Six</li>
-				</ul>
-			</div>
+			<h2>1Test1</h2>
 		</div>
 	</div>
 </body>
