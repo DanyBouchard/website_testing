@@ -5,24 +5,26 @@
 {% endblock %}
 
 {% block content %}
-<form action="{{ url_for('submit') }}" method="post">
-	First Name: <input name="first_name" type="text"/>
-	<br/>
-	Last Name: <input name="last_name" type="text"/>
-	<br/>
-	Gender: 
-	<select name="gender">
-		<option value=""></option>
-		<option value="male">Male</option>
-		<option value="female">Female</option>
-		<option value="apache_helicopter">Apache Helicopter</option>
-		<option value="tardigrade">Tardigrade</option>
-	</select>
-	<br/>
-	Message: <input type="text" size=55 name="message"/>
-	<br/>
-	(55 characters maximum)
-	<br/>
-	<input type="submit" value="Submit"/>
-</form>
+<div id="form">
+	<form action="{{ url_for('submit') }}" method="post">
+		First Name: <input name="first_name" type="text" maxlength="80"/>
+		<br/>
+		Last Name: <input name="last_name" type="text" maxlength="80"/>
+		<br/>
+		Gender: 
+		<select name="gender">
+			<option value=""></option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="apache_helicopter">Apache Helicopter</option>
+			<option value="tardigrade">Tardigrade</option>
+		</select>
+		<br/>
+		Message: <input type="text" size=55 name="message" maxlength="55"/>
+		<br/>
+		(55 characters maximum)
+		<br/>
+		<input type="submit" value="Submit"/>
+	</form>
+</div>
 {% endblock%}
